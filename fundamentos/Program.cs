@@ -157,5 +157,32 @@ internal class Program
         Console.WriteLine(porco.Nome + "faz: ");
         Porco.EmitirSom();
         */
+
+
+
+        Mago merlior = new Mago();
+        merlior.Nome = "Mago Merlior";
+        merlior.Vida = 100;
+        merlior.Inteligencia = 87;
+        merlior.Agilidade = 55;
+        merlior.Forca = 62;
+        merlior.Nivel = 1;
+
+        Elfo elfo = new Elfo();
+        elfo.Nome = "Azula";
+        elfo.Vida = 100;
+        elfo.Inteligencia = 83;
+        elfo.Forca = 56;
+        elfo.Agilidade = 90;
+        elfo.Nivel = 1;
+
+
+        merlior.apresentarSe();
+        elfo.apresentarSe();
+
+        int ataque = merlior.atacar();
+        int defesa = merlior.defender();
+        Console.WriteLine("Força do Ataque: " + ataque);
+        Console.WriteLine("Força do Defesa: " + defesa);
     }
 }
