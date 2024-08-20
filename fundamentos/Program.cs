@@ -157,8 +157,5 @@ internal class Program
         Console.WriteLine(porco.Nome + "faz: ");
         Porco.EmitirSom();
         */
-
-
-        //Personagem
     }
 }
