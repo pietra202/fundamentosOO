@@ -3,34 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using fundamentos;
 
-namespace fundamentos
+namespace Fundamentos
 {
     public class Cavaleiro : Personagem
     {
-        public override void Apresentação()
+        public override void apresentarSe()
         {
-            Console.WriteLine("Eu sou o Lucrecio, vamos para a guerra");
-        }
-
-        public override void atacar()
-        {
-            Console.WriteLine();
-        }
-
-        public override void Batalha(Personagem p)
-        {
-            Console.WriteLine();
-        }
-
-        public override void defender()
-        {
-            Console.WriteLine();
-        }
-
-        public override void Evoluir()
-        {
-            Console.WriteLine();
+            Console.WriteLine("Olá, eu sou o Cavaleiro " + this.Nome + " tenho " + this.Vida + " pontos de vida.\nInteligência: " + this.Inteligencia + "\nAgilidade: " + this.Agilidade + "\nForça: " + this.Forca + "\nNível atual é: " + this.Nivel);
+            Console.WriteLine("==================================================");
         }
     }
 }

@@ -3,34 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using fundamentos;
 
-namespace fundamentos
+namespace Fundamentos
 {
     public class Mago : Personagem
     {
-        public override void Apresentação()
+        public override void apresentarSe()
         {
-            Console.WriteLine("Oii ! Eu me chamo Melior" +);
-        }
-
-        public override void atacar()
-        {
-            Console.WriteLine("4 elementos, 30");
-        }
-
-        public override void Batalha()
-        {
-            Console.WriteLine("30-20 = 10");
-        }
-
-        public override void defender()
-        {
-            Console.WriteLine("20");
-        }
-
-        public override void Evoluir()
-        {
-            Console.WriteLine("5");
+            Console.WriteLine("Olá, eu sou o Mago " + this.Nome + " tenho " + this.Vida + " pontos de vida.\nInteligência: " + this.Inteligencia + "\nAgilidade: " + this.Agilidade + "\nForça: " + this.Forca + "\nNível atual é: " + this.Nivel);
+            Console.WriteLine("==================================================");
         }
     }
 }

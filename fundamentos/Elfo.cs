@@ -3,34 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using fundamentos;
 
-namespace fundamentos
+namespace Fundamentos
 {
     public class Elfo : Personagem
     {
-        public override void Apresentação()
+        public override void apresentarSe()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Olá, eu sou o Elfo " + this.Nome + " tenho " + this.Vida + " pontos de vida.\nInteligência: " + this.Inteligencia + "\nAgilidade: " + this.Agilidade + "\nForça: " + this.Forca + "\nNível atual é: " + this.Nivel);
+            Console.WriteLine("==================================================");
         }
 
-        public override void atacar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void batalhar(Personagem p)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void defender()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Evoluir()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

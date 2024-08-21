@@ -4,44 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fundamentos
+namespace Fundamentos
 {
     public class Personagem
     {
-        //atributos
+        // Atributos
         public string Nome { get; set; }
-
-        public string Categoria { get; set; }
-        public string Idade { get; set; }
-
         public int Nivel { get; set; }
-        public int Força { get; set; }
+        public int Forca { get; set; }
         public int Agilidade { get; set; }
         public int Inteligencia { get; set; }
         public int Vida { get; set; }
 
-        //Metodos
-
-        public virtual void Apresentação() { }
-        public virtual void Evoluir() { }
-
+        // Metodos
+        public virtual void apresentarSe() { }
+        public virtual void evoluir()
+        {
+            this.Nivel += 2;
+            this.Forca *= 2;
+            this.Inteligencia *= 2;
+            this.Agilidade *= 2;
+            Console.WriteLine("O Jogador" + this.Nome + " Evoluiu para o nível" + this.Nivel + ". Seus novos valores são: \nAgilidade: " + this.Agilidade + "\nInteligencia: " + this.Inteligencia + "\nForça: " + this.Forca);
+        }
         public virtual int atacar()
         {
-            int pontosAtaque = 6;
-            pontosAtaque = this.Inteligencia + this.Força + (this.Agilidade) + this.Nivel + this.Vida) / 6;
-            return.pontosDeAtaque;
+            int pontosAtaque = 0;
+            pontosAtaque = (this.Inteligencia + (this.Forca * 2) + this.Agilidade + this.Nivel + this.Vida) / 6;
+            return pontosAtaque;
         }
         public virtual int defender()
         {
-            int pontosDeDefesa = 6;
-            pontosDeDefesa = this.Inteligencia + this.Força + (this.Agilidade) + this.Nivel + this.Vida / 6;
-            return pontosDeDefesa;
+            int pontosDefesa = 0;
+            pontosDefesa = (this.Inteligencia + this.Forca + (this.Agilidade * 2) + this.Nivel + this.Vida) / 6;
+            return pontosDefesa;
         }
-
         public virtual void batalhar(Personagem p)
         {
             bool vencedor = false;
-            while (vencedor = false) ;
+            while (vencedor == false)
             {
                 int valorAtaque = this.atacar();
                 int valorDefesaInimigo = p.defender();
@@ -64,23 +64,24 @@ namespace fundamentos
                 this.Vida = this.Vida - danoDeVida2;
                 Console.WriteLine("Dano na Vida do Atacante em " + danoDeVida2);
                 Console.WriteLine("O nível de vida do Atacante agora é " + this.Vida);
-                this.Vida);
-
-                Console.WriteLine("==========================================");
+                Console.WriteLine("======================================");
 
                 if (this.Vida <= 0)
                 {
-                    Console.WriteLine("O Persnagem" + p.Nome + "vencedor!");
+                    Console.WriteLine("O Personagem " + p.Nome + " Venceu!");
                     vencedor = true;
+                    p.evoluir();
                 }
 
                 if (p.Vida <= 0)
                 {
-                    Console.WriteLine("O personagem " + this.Nome + " Vencedor!");
+                    Console.WriteLine("O Personagem " + this.Nome + " Venceu!");
                     vencedor = true;
+                    this.evoluir();
                 }
-            }
-        }
 
+            }
+
+        }
     }
 }
